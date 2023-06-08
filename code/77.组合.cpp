@@ -36,13 +36,11 @@ public:
     {
         if (temp.size()==k)
         {
-            //sort(temp.begin(),temp.end());
-            //if(count(ans.begin(),ans.end(),temp)==0)
             ans.push_back(temp);
         }
         for(int i=pos;i<=n;i++)
         {
-            if(temp.empty()||i>temp.back())
+            if(temp.empty()||i>temp.back())//去重，关键一步
             {
                  temp.push_back(i);
                  backtrack(n,k,pos+1);
